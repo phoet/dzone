@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* dzoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* dzoneViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* dzoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */; };
+		4E032C2E11E7A7EA006D1030 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E032C2D11E7A7EA006D1030 /* XMLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dzoneViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* dzone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dzone_Prefix.pch; sourceTree = "<group>"; };
+		4E032C2C11E7A7EA006D1030 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		4E032C2D11E7A7EA006D1030 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +57,8 @@
 				1D3623250D0F684500981E51 /* dzoneAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* dzoneViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */,
+				4E032C2C11E7A7EA006D1030 /* XMLParser.h */,
+				4E032C2D11E7A7EA006D1030 /* XMLParser.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* dzoneAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* dzoneViewController.m in Sources */,
+				4E032C2E11E7A7EA006D1030 /* XMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

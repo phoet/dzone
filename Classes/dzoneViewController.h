@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dzoneViewController : UIViewController {
+@interface dzoneViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
 
+	NSMutableArray *listData;
+	
 }
+
+@property (nonatomic, retain) NSMutableArray *listData;
 
 @end
 

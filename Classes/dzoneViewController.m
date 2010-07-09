@@ -10,40 +10,44 @@
 
 @implementation dzoneViewController
 
-
-
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+@synthesize listData;
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
+ // The designated initializer. Override to perform setup that is required before the view is loaded.
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+ // Custom initialization
+ }
+ return self;
+ }
+ */
 
 /*
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView {
+ }
+ */
+
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
+//- (void)viewDidLoad {
+//	NSMutableArray *array = [NSMutableArray arrayWithObjects:@"AAA", @"BBB", @"CCC", nil];
+//	
+//	self.listData = array;
+//	[array release];
+//	
+//    [super viewDidLoad];
+//}
+
 
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -60,6 +64,25 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark data source
+- (NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
+	return [listData count];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	static NSString *Identifier = @"Identifier";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier] autorelease];
+	}
+	NSUInteger row = [indexPath row];
+	cell.textLabel.text = [listData objectAtIndex:row];
+	return cell;
 }
 
 @end
