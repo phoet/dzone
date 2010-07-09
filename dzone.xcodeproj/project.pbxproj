@@ -33,6 +33,7 @@
 		32CA4F630368D1EE00C91783 /* dzone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dzone_Prefix.pch; sourceTree = "<group>"; };
 		4E032C2C11E7A7EA006D1030 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		4E032C2D11E7A7EA006D1030 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		4E032D6B11E7C2F4006D1030 /* readme.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.textile; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +80,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				4E032D6B11E7C2F4006D1030 /* readme.textile */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";

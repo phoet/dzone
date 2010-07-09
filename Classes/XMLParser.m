@@ -4,7 +4,7 @@
 //
 //  Created by Peter Schröder on 09.07.10.
 //  Copyright 2010 blau Mobilfunk GmbH. All rights reserved.
-//
+// http://www.iphonesdkarticles.com/2008/11/parsing-xml-files.html
 
 #import "XMLParser.h"
 #import "dzoneViewController.h"
@@ -14,7 +14,7 @@
 - (XMLParser *) initXMLParser:(dzoneViewController *)vc {
 	[super init];
 	
-	viewController = [vc autorelease];
+	viewController = vc;
 	
 	return self;
 }
