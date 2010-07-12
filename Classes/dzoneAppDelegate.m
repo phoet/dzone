@@ -9,6 +9,7 @@
 #import "dzoneAppDelegate.h"
 #import "dzoneViewController.h"
 #import "XMLParser.h"
+#import "TBXML.h"
 
 @implementation dzoneAppDelegate
 
@@ -16,24 +17,22 @@
 @synthesize viewController;
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-	NSURL *url = [[NSURL alloc] initWithString:@"http://feeds.dzone.com/dzone/frontpage"];
-	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+- (void)applicationDidFinishLaunching:(UIApplication *)application {	
+	viewController.listData = [[[NSMutableArray alloc] init] autorelease];
+
+//	http://www.tbxml.co.uk/TBXML/Guides.html
 	
-	//Initialize the delegate.
-	XMLParser *parser = [[XMLParser alloc] initXMLParser: viewController];
-	
-	//Set delegate
-	[xmlParser setDelegate:parser];
-	
-	//Start parsing the XML file.
-	BOOL success = [xmlParser parse];
-	
-	if(success){
-		NSLog(@"No Errors");
-	} else {
-		NSLog(@"Error Error Error!!!");
-	}
+	TBXML * tbxml = [[TBXML tbxmlWithURL:[NSURL URLWithString:@"http://feeds.dzone.com/dzone/frontpage"]] retain];
+	TBXMLElement * rootXMLElement = tbxml.rootXMLElement;
+	NSString * name = [TBXML elementName:rootXMLElement];
+	NSLog(@"element has name %@", name);
+    TBXMLElement* element = [TBXML childElementNamed:@"item" parentElement:[TBXML childElementNamed:@"channel" parentElement:rootXMLElement]];
+	do {
+		TBXMLElement* titleElement = [TBXML childElementNamed:@"title" parentElement:element];
+		NSString * title = [TBXML textForElement:titleElement];	
+		NSLog(@"element has title %@", title);
+		[viewController.listData addObject:[title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+	} while ((element = element->nextSibling));
     
     // Override point for customization after app launch    
     [window addSubview:viewController.view];

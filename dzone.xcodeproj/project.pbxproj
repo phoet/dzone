@@ -15,7 +15,9 @@
 		2899E5220DE3E06400AC0155 /* dzoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* dzoneViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* dzoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */; };
-		4E032C2E11E7A7EA006D1030 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E032C2D11E7A7EA006D1030 /* XMLParser.m */; };
+		4EA3EF3B11EB8BFD0040B8CD /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EF3711EB8BFD0040B8CD /* TBXML.m */; };
+		4EA3EF3C11EB8BFD0040B8CD /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EF3911EB8BFD0040B8CD /* NSDataAdditions.m */; };
+		4EA3EF3E11EB8C400040B8CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA3EF3D11EB8C400040B8CD /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +33,12 @@
 		28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dzoneViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* dzone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dzone_Prefix.pch; sourceTree = "<group>"; };
-		4E032C2C11E7A7EA006D1030 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
-		4E032C2D11E7A7EA006D1030 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
 		4E032D6B11E7C2F4006D1030 /* readme.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.textile; sourceTree = "<group>"; };
+		4EA3EF3711EB8BFD0040B8CD /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		4EA3EF3811EB8BFD0040B8CD /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		4EA3EF3911EB8BFD0040B8CD /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		4EA3EF3A11EB8BFD0040B8CD /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		4EA3EF3D11EB8C400040B8CD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +50,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				4EA3EF3E11EB8C400040B8CD /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +64,6 @@
 				1D3623250D0F684500981E51 /* dzoneAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* dzoneViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */,
-				4E032C2C11E7A7EA006D1030 /* XMLParser.h */,
-				4E032C2D11E7A7EA006D1030 /* XMLParser.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -75,12 +79,14 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4EA3EF3511EB8BB10040B8CD /* TBXML */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				4E032D6B11E7C2F4006D1030 /* readme.textile */,
+				4EA3EF3D11EB8C400040B8CD /* libz.dylib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -112,6 +118,17 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EA3EF3511EB8BB10040B8CD /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				4EA3EF3711EB8BFD0040B8CD /* TBXML.m */,
+				4EA3EF3811EB8BFD0040B8CD /* TBXML.h */,
+				4EA3EF3911EB8BFD0040B8CD /* NSDataAdditions.m */,
+				4EA3EF3A11EB8BFD0040B8CD /* NSDataAdditions.h */,
+			);
+			name = TBXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +188,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* dzoneAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* dzoneViewController.m in Sources */,
-				4E032C2E11E7A7EA006D1030 /* XMLParser.m in Sources */,
+				4EA3EF3B11EB8BFD0040B8CD /* TBXML.m in Sources */,
+				4EA3EF3C11EB8BFD0040B8CD /* NSDataAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
