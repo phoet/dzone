@@ -22,4 +22,4 @@ h2. Credits
 
 h2. Screenshots
 
-!http://twitpic.com/show/thumb/24qkxt.png(dzone Feed)!:http://github.com/phoet/dzone
+!http://dl.dropbox.com/u/153067/Bildschirmfoto%202010-07-12%20um%2021.23.24.png(dzone Feed)!:http://github.com/phoet/dzone
