@@ -18,6 +18,7 @@
 		4EA3EF3B11EB8BFD0040B8CD /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EF3711EB8BFD0040B8CD /* TBXML.m */; };
 		4EA3EF3C11EB8BFD0040B8CD /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EF3911EB8BFD0040B8CD /* NSDataAdditions.m */; };
 		4EA3EF3E11EB8C400040B8CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA3EF3D11EB8C400040B8CD /* libz.dylib */; };
+		4EA3EFC011EB9D8F0040B8CD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EFBF11EB9D8F0040B8CD /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		4EA3EF3911EB8BFD0040B8CD /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		4EA3EF3A11EB8BFD0040B8CD /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		4EA3EF3D11EB8C400040B8CD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4EA3EFBE11EB9D8F0040B8CD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		4EA3EFBF11EB9D8F0040B8CD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +67,8 @@
 				1D3623250D0F684500981E51 /* dzoneAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* dzoneViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */,
+				4EA3EFBE11EB9D8F0040B8CD /* Item.h */,
+				4EA3EFBF11EB9D8F0040B8CD /* Item.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				28D7ACF80DDB3853001CB0EB /* dzoneViewController.m in Sources */,
 				4EA3EF3B11EB8BFD0040B8CD /* TBXML.m in Sources */,
 				4EA3EF3C11EB8BFD0040B8CD /* NSDataAdditions.m in Sources */,
+				4EA3EFC011EB9D8F0040B8CD /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

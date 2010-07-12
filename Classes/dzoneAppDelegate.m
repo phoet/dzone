@@ -8,8 +8,8 @@
 
 #import "dzoneAppDelegate.h"
 #import "dzoneViewController.h"
-#import "XMLParser.h"
 #import "TBXML.h"
+#import "Item.h"
 
 @implementation dzoneAppDelegate
 
@@ -31,7 +31,15 @@
 		TBXMLElement* titleElement = [TBXML childElementNamed:@"title" parentElement:element];
 		NSString * title = [TBXML textForElement:titleElement];	
 		NSLog(@"element has title %@", title);
-		[viewController.listData addObject:[title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+		
+		TBXMLElement* categoryElement = [TBXML childElementNamed:@"category" parentElement:element];
+		NSString * category = [TBXML textForElement:categoryElement];	
+		NSLog(@"element has category %@", category);
+		
+		Item * item = [[[Item alloc] init] autorelease];
+		item.title = [title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		item.category = [category stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		[viewController.listData addObject:item];
 	} while ((element = element->nextSibling));
     
     // Override point for customization after app launch    

@@ -7,6 +7,7 @@
 //
 
 #import "dzoneViewController.h"
+#import "Item.h"
 
 @implementation dzoneViewController
 
@@ -78,10 +79,13 @@
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Identifier] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:Identifier] autorelease];
+		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 	}
 	NSUInteger row = [indexPath row];
-	cell.textLabel.text = [listData objectAtIndex:row];
+	Item* item = [listData objectAtIndex:row];
+	cell.textLabel.text = item.title;
+	cell.detailTextLabel.text = item.category;
 	return cell;
 }
 
