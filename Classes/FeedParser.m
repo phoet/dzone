@@ -22,7 +22,7 @@
 + (NSArray*) parseItemsFromURL:(NSString *) urlString{
 	TBXML* tbxml = [[TBXML tbxmlWithURL:[NSURL URLWithString:urlString]] retain];
 	TBXMLElement* rootXMLElement = tbxml.rootXMLElement;
-	NSMutableArray* array = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray* array = [[NSMutableArray alloc] init];
 	if (rootXMLElement) {
 		NSString* name = [TBXML elementName:rootXMLElement];
 		NSLog(@"element has name %@", name);

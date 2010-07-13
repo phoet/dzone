@@ -1,22 +1,15 @@
-//
-//  dzoneAppDelegate.h
-//  dzone
-//
-//  Created by Peter Schröder on 09.07.10.
-//  Copyright blau Mobilfunk GmbH 2010. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
-@class dzoneViewController;
-
-@interface dzoneAppDelegate : NSObject <UIApplicationDelegate> {
+@interface testoAppDelegate : NSObject <UIApplicationDelegate> {
+    
     UIWindow *window;
-    dzoneViewController *viewController;
+    UINavigationController *navigationController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet dzoneViewController *viewController;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 @end
 

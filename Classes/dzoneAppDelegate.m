@@ -1,52 +1,82 @@
-//
-//  dzoneAppDelegate.m
-//  dzone
-//
-//  Created by Peter Schröder on 09.07.10.
-//  Copyright blau Mobilfunk GmbH 2010. All rights reserved.
-//
 
-#import "dzoneAppDelegate.h"
-#import "dzoneViewController.h"
-#import "FeedParser.h"
-#import "Item.h"
+#import "DZoneAppDelegate.h"
+#import "RootViewController.h"
 
-#define DZONE_URL @"http://feeds.dzone.com/dzone/frontpage"
 
-@implementation dzoneAppDelegate
+@implementation testoAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+@synthesize navigationController;
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {	
-	// TODO check why this can't be done in the viewController init method
-	viewController.listData = [[[NSMutableArray alloc] init] autorelease];
-	
-	NSArray * items = [FeedParser parseItemsFromURL: DZONE_URL];
-	if ([items count] > 0 ) {
-		for (Item * item in items) {
-			[viewController.listData addObject:item];
-		}
-	} else {
-		NSString* errorMessage = [NSString stringWithFormat:@"Check your networking configuration, could not load %@", DZONE_URL];
-		UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"An Error Occured" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-		
-		[alertView show];
-		[alertView release];
-	}
+#pragma mark -
+#pragma mark Application lifecycle
 
-    // Override point for customization after app launch    
-    [window addSubview:viewController.view];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    
+    // Add the navigation controller's view to the window and display.
+    [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
+
+    return YES;
+}
+
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    /*
+     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+     */
+}
+
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    /*
+     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+     If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
+     */
+}
+
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    /*
+     Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
+     */
+}
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    /*
+     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     */
+}
+
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    /*
+     Called when the application is about to terminate.
+     See also applicationDidEnterBackground:.
+     */
+}
+
+
+#pragma mark -
+#pragma mark Memory management
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    /*
+     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
+     */
 }
 
 
 - (void)dealloc {
-    [viewController release];
-    [window release];
-    [super dealloc];
+	[navigationController release];
+	[window release];
+	[super dealloc];
 }
 
 
 @end
+

@@ -7,33 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* dzoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* dzoneAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		2899E5220DE3E06400AC0155 /* dzoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* dzoneViewController.xib */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		28D7ACF80DDB3853001CB0EB /* dzoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */; };
 		4EA3EF3B11EB8BFD0040B8CD /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EF3711EB8BFD0040B8CD /* TBXML.m */; };
 		4EA3EF3C11EB8BFD0040B8CD /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EF3911EB8BFD0040B8CD /* NSDataAdditions.m */; };
 		4EA3EF3E11EB8C400040B8CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA3EF3D11EB8C400040B8CD /* libz.dylib */; };
-		4EA3EFC011EB9D8F0040B8CD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3EFBF11EB9D8F0040B8CD /* Item.m */; };
-		4EA3F00711EBB09D0040B8CD /* FeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3F00611EBB09D0040B8CD /* FeedParser.m */; };
-		4EC8EB6411EC2E4F008C0F82 /* ItemDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EC8EB6311EC2E4F008C0F82 /* ItemDetails.xib */; };
+		4EFB4C2211ED1E6B00529BF9 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB4C1F11ED1E6B00529BF9 /* DetailView.xib */; };
+		4EFB4C2311ED1E6B00529BF9 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2011ED1E6B00529BF9 /* RootViewController.xib */; };
+		4EFB4C2411ED1E6B00529BF9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2111ED1E6B00529BF9 /* MainWindow.xib */; };
+		4EFB4C2F11ED1EB000529BF9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2511ED1EB000529BF9 /* DetailViewController.m */; };
+		4EFB4C3011ED1EB000529BF9 /* FeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2611ED1EB000529BF9 /* FeedParser.m */; };
+		4EFB4C3111ED1EB000529BF9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2711ED1EB000529BF9 /* RootViewController.m */; };
+		4EFB4C3211ED1EB000529BF9 /* DZoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */; };
+		4EFB4C3311ED1EB000529BF9 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2D11ED1EB000529BF9 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* dzoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dzoneAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* dzoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dzoneAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* dzone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dzone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2899E5210DE3E06400AC0155 /* dzoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dzoneViewController.xib; sourceTree = "<group>"; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		28D7ACF60DDB3853001CB0EB /* dzoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dzoneViewController.h; sourceTree = "<group>"; };
-		28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dzoneViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* dzone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dzone_Prefix.pch; sourceTree = "<group>"; };
 		4E032D6B11E7C2F4006D1030 /* readme.textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.textile; sourceTree = "<group>"; };
@@ -42,11 +37,19 @@
 		4EA3EF3911EB8BFD0040B8CD /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		4EA3EF3A11EB8BFD0040B8CD /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		4EA3EF3D11EB8C400040B8CD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		4EA3EFBE11EB9D8F0040B8CD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		4EA3EFBF11EB9D8F0040B8CD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		4EA3F00511EBB09D0040B8CD /* FeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedParser.h; sourceTree = "<group>"; };
-		4EA3F00611EBB09D0040B8CD /* FeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedParser.m; sourceTree = "<group>"; };
-		4EC8EB6311EC2E4F008C0F82 /* ItemDetails.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemDetails.xib; sourceTree = "<group>"; };
+		4EFB4C1F11ED1E6B00529BF9 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		4EFB4C2011ED1E6B00529BF9 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		4EFB4C2111ED1E6B00529BF9 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		4EFB4C2511ED1EB000529BF9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4EFB4C2611ED1EB000529BF9 /* FeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedParser.m; sourceTree = "<group>"; };
+		4EFB4C2711ED1EB000529BF9 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZoneAppDelegate.m; sourceTree = "<group>"; };
+		4EFB4C2911ED1EB000529BF9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4EFB4C2A11ED1EB000529BF9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		4EFB4C2B11ED1EB000529BF9 /* DZoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZoneAppDelegate.h; sourceTree = "<group>"; };
+		4EFB4C2C11ED1EB000529BF9 /* FeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedParser.h; sourceTree = "<group>"; };
+		4EFB4C2D11ED1EB000529BF9 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		4EFB4C2E11ED1EB000529BF9 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,14 +71,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* dzoneAppDelegate.h */,
-				1D3623250D0F684500981E51 /* dzoneAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* dzoneViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* dzoneViewController.m */,
-				4EA3EFBE11EB9D8F0040B8CD /* Item.h */,
-				4EA3EFBF11EB9D8F0040B8CD /* Item.m */,
-				4EA3F00511EBB09D0040B8CD /* FeedParser.h */,
-				4EA3F00611EBB09D0040B8CD /* FeedParser.m */,
+				4EFB4C2511ED1EB000529BF9 /* DetailViewController.m */,
+				4EFB4C2611ED1EB000529BF9 /* FeedParser.m */,
+				4EFB4C2711ED1EB000529BF9 /* RootViewController.m */,
+				4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */,
+				4EFB4C2911ED1EB000529BF9 /* DetailViewController.h */,
+				4EFB4C2A11ED1EB000529BF9 /* RootViewController.h */,
+				4EFB4C2B11ED1EB000529BF9 /* DZoneAppDelegate.h */,
+				4EFB4C2C11ED1EB000529BF9 /* FeedParser.h */,
+				4EFB4C2D11ED1EB000529BF9 /* Item.m */,
+				4EFB4C2E11ED1EB000529BF9 /* Item.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -115,10 +120,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2899E5210DE3E06400AC0155 /* dzoneViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				4EFB4C1F11ED1E6B00529BF9 /* DetailView.xib */,
+				4EFB4C2011ED1E6B00529BF9 /* RootViewController.xib */,
+				4EFB4C2111ED1E6B00529BF9 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* dzone-Info.plist */,
-				4EC8EB6311EC2E4F008C0F82 /* ItemDetails.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -186,9 +191,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				2899E5220DE3E06400AC0155 /* dzoneViewController.xib in Resources */,
-				4EC8EB6411EC2E4F008C0F82 /* ItemDetails.xib in Resources */,
+				4EFB4C2211ED1E6B00529BF9 /* DetailView.xib in Resources */,
+				4EFB4C2311ED1E6B00529BF9 /* RootViewController.xib in Resources */,
+				4EFB4C2411ED1E6B00529BF9 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,12 +205,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* dzoneAppDelegate.m in Sources */,
-				28D7ACF80DDB3853001CB0EB /* dzoneViewController.m in Sources */,
 				4EA3EF3B11EB8BFD0040B8CD /* TBXML.m in Sources */,
 				4EA3EF3C11EB8BFD0040B8CD /* NSDataAdditions.m in Sources */,
-				4EA3EFC011EB9D8F0040B8CD /* Item.m in Sources */,
-				4EA3F00711EBB09D0040B8CD /* FeedParser.m in Sources */,
+				4EFB4C2F11ED1EB000529BF9 /* DetailViewController.m in Sources */,
+				4EFB4C3011ED1EB000529BF9 /* FeedParser.m in Sources */,
+				4EFB4C3111ED1EB000529BF9 /* RootViewController.m in Sources */,
+				4EFB4C3211ED1EB000529BF9 /* DZoneAppDelegate.m in Sources */,
+				4EFB4C3311ED1EB000529BF9 /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
