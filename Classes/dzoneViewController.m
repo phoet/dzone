@@ -12,6 +12,7 @@
 @implementation dzoneViewController
 
 @synthesize listData;
+@synthesize currentItem;
 
 /*
  // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -68,7 +69,7 @@
 }
 
 #pragma mark -
-#pragma mark data source
+#pragma mark delegate stuff
 - (NSInteger) tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
 	return [listData count];
 }
@@ -89,4 +90,12 @@
 	return cell;
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	NSUInteger row = [indexPath row];
+	NSLog(@"User tapped disclosuer button on path %i", row);
+	// Nav-Controller anschauen und verstehen
+//	[[NSBundle mainBundle] loadNibNamed:@"ItemDetails" owner:self options:nil];
+//	Item* item = [listData objectAtIndex:row];
+//	title.text = item.title;
+}
 @end

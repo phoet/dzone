@@ -2,6 +2,8 @@ h1. About
 
 dzone iPhone client, since these are my first iPhone SDK steps, don't expect too much...
 
+See the Screenshots for details.
+
 h2. Current Features
 
 * synchronously load dzone frontpage feed and display it
@@ -9,17 +11,20 @@ h2. Current Features
 
 h2. Planned Features
 
+* reload button
 * detail view of feed items
-* asynchronous download
+* open article in browser
+* asynchronous download (with spinner)
 * personal feed
 * personal login credentials and other settings
 * vote up, vote down from detail view using personal credentials
 * store older feed values like twitter app (offline mode?)
 
-h2. Credits
-
-* "TBXML":http://www.tbxml.co.uk/
-
 h2. Screenshots
 
 !http://dl.dropbox.com/u/153067/Bildschirmfoto%202010-07-12%20um%2021.23.24.png(dzone Feed)!:http://github.com/phoet/dzone
+
+h2. Credits
+
+* "How To Choose The Best XML Parser for Your iPhone Project":http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project
+* "TBXML":http://www.tbxml.co.uk/

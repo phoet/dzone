@@ -7,14 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 @interface dzoneViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
 
 	NSMutableArray *listData;
 	
+	Item * currentItem;
+	
+	IBOutlet UILabel *title;
+	
 }
 
 @property (nonatomic, retain) NSMutableArray *listData;
+@property (nonatomic, retain) Item *currentItem;
 
 @end
 
