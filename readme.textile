@@ -8,7 +8,7 @@ h2. Current Features for Version 0.0.1
 
 * synchronously load dzone frontpage feed and display it
 * use TBXML DOM parsing for dzone feed
-* handling of XML-Entities
+* handling of XML-entities
 * detail view of feed items
 
 h2. Planned Features
@@ -30,3 +30,4 @@ h2. Credits
 * "How To Choose The Best XML Parser for Your iPhone Project":http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project
 * "TBXML":http://www.tbxml.co.uk/
 * "MWFeedParser for XML-Entities":http://github.com/mwaterfall/MWFeedParser/
+* "Google Toolbox for Mac":http://code.google.com/p/google-toolbox-for-mac/
