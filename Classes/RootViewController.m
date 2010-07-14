@@ -88,13 +88,16 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
 	// Configure the cell.
 	Item* item = [items objectAtIndex: [indexPath row]];
+	cell.textLabel.font = [UIFont systemFontOfSize:12];
 	cell.textLabel.text = item.title;
+	cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
+	cell.detailTextLabel.text = item.description;
 
     return cell;
 }

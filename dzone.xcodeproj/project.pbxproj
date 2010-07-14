@@ -22,6 +22,7 @@
 		4EFB4C3111ED1EB000529BF9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2711ED1EB000529BF9 /* RootViewController.m */; };
 		4EFB4C3211ED1EB000529BF9 /* DZoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */; };
 		4EFB4C3311ED1EB000529BF9 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2D11ED1EB000529BF9 /* Item.m */; };
+		83A2711511ED928200C8AD60 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2711411ED928200C8AD60 /* NSString+XMLEntities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		4EFB4C2C11ED1EB000529BF9 /* FeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedParser.h; sourceTree = "<group>"; };
 		4EFB4C2D11ED1EB000529BF9 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		4EFB4C2E11ED1EB000529BF9 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		83A2711311ED928200C8AD60 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		83A2711411ED928200C8AD60 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +99,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				83A2710E11ED926500C8AD60 /* MFeedParser */,
 				4EA3EF3511EB8BB10040B8CD /* TBXML */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -147,6 +151,15 @@
 				4EA3EF3A11EB8BFD0040B8CD /* NSDataAdditions.h */,
 			);
 			name = TBXML;
+			sourceTree = "<group>";
+		};
+		83A2710E11ED926500C8AD60 /* MFeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				83A2711311ED928200C8AD60 /* NSString+XMLEntities.h */,
+				83A2711411ED928200C8AD60 /* NSString+XMLEntities.m */,
+			);
+			name = MFeedParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +225,7 @@
 				4EFB4C3111ED1EB000529BF9 /* RootViewController.m in Sources */,
 				4EFB4C3211ED1EB000529BF9 /* DZoneAppDelegate.m in Sources */,
 				4EFB4C3311ED1EB000529BF9 /* Item.m in Sources */,
+				83A2711511ED928200C8AD60 /* NSString+XMLEntities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

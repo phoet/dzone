@@ -2,12 +2,17 @@
 #import "FeedParser.h"
 #import "TBXML.h"
 #import "Item.h"
+#import "NSString+XMLEntities.h"
 
 @implementation FeedParser
 
++ (NSString*) niceStringFromElement:(TBXMLElement*) element  {
+	return [[TBXML textForElement:element] stringByDecodingXMLEntities];
+}
+
 + (NSString*) valueWithName:(NSString*) name fromElement:(TBXMLElement*) element  {
 	TBXMLElement* childElement = [TBXML childElementNamed:name parentElement:element];
-	NSString* text = [[TBXML textForElement:childElement] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	NSString* text = [self niceStringFromElement: childElement];
 	return text;
 }
 
@@ -17,7 +22,7 @@
 	do {	
 		NSString* currentName = [TBXML elementName:childElement];
 		if ([currentName isEqualToString:name]) {
-			NSString* text = [[TBXML textForElement:childElement] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+			NSString* text = [self niceStringFromElement: childElement];
 			NSLog(@"array element %@ has text %@", currentName, text);
 			[array addObject:text];
 		}
@@ -39,6 +44,7 @@
 		do {
 			Item* item = [[[Item alloc] init] autorelease];
 			item.title = [self valueWithName:@"title" fromElement:element];
+			item.description = [self valueWithName:@"description" fromElement:element];
 			item.categories = [self arrayWithName:@"category" fromElement:element];
 			[array addObject:item];
 			

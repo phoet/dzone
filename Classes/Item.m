@@ -4,7 +4,6 @@
 
 @implementation Item
 
-@synthesize title;
-@synthesize categories;
+@synthesize title, description, categories;
 
 @end
