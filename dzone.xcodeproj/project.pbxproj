@@ -71,16 +71,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4EFB4C2511ED1EB000529BF9 /* DetailViewController.m */,
-				4EFB4C2611ED1EB000529BF9 /* FeedParser.m */,
-				4EFB4C2711ED1EB000529BF9 /* RootViewController.m */,
-				4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */,
-				4EFB4C2911ED1EB000529BF9 /* DetailViewController.h */,
-				4EFB4C2A11ED1EB000529BF9 /* RootViewController.h */,
 				4EFB4C2B11ED1EB000529BF9 /* DZoneAppDelegate.h */,
+				4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */,
+				4EFB4C2A11ED1EB000529BF9 /* RootViewController.h */,
+				4EFB4C2711ED1EB000529BF9 /* RootViewController.m */,
+				4EFB4C2911ED1EB000529BF9 /* DetailViewController.h */,
+				4EFB4C2511ED1EB000529BF9 /* DetailViewController.m */,
 				4EFB4C2C11ED1EB000529BF9 /* FeedParser.h */,
-				4EFB4C2D11ED1EB000529BF9 /* Item.m */,
+				4EFB4C2611ED1EB000529BF9 /* FeedParser.m */,
 				4EFB4C2E11ED1EB000529BF9 /* Item.h */,
+				4EFB4C2D11ED1EB000529BF9 /* Item.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

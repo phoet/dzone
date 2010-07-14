@@ -1,10 +1,3 @@
-//
-//  FeedParser.m
-//  dzone
-//
-//  Created by Peter Schröder on 12.07.10.
-//  Copyright 2010 blau Mobilfunk GmbH. All rights reserved.
-//
 
 #import "FeedParser.h"
 #import "TBXML.h"
@@ -12,11 +5,25 @@
 
 @implementation FeedParser
 
-+ (NSString*) valueWithName:(NSString *) name fromElement:(TBXMLElement*) element  {
++ (NSString*) valueWithName:(NSString*) name fromElement:(TBXMLElement*) element  {
 	TBXMLElement* childElement = [TBXML childElementNamed:name parentElement:element];
 	NSString* text = [[TBXML textForElement:childElement] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	NSLog(@"element %@ has text %@", name, text);
 	return text;
+}
+
++ (NSArray*) arrayWithName:(NSString*) name fromElement:(TBXMLElement*) element  {
+	TBXMLElement* childElement = [TBXML childElementNamed:name parentElement:element];
+	NSMutableArray* array = [[NSMutableArray alloc] init];
+	do {	
+		NSString* currentName = [TBXML elementName:childElement];
+		if ([currentName isEqualToString:name]) {
+			NSString* text = [[TBXML textForElement:childElement] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+			NSLog(@"array element %@ has text %@", currentName, text);
+			[array addObject:text];
+		}
+		
+	} while (childElement = childElement->nextSibling);
+	return array;
 }
 
 + (NSArray*) parseItemsFromURL:(NSString *) urlString{
@@ -32,10 +39,10 @@
 		do {
 			Item* item = [[[Item alloc] init] autorelease];
 			item.title = [self valueWithName:@"title" fromElement:element];
-			item.category = [self valueWithName:@"category" fromElement:element];
+			item.categories = [self arrayWithName:@"category" fromElement:element];
 			[array addObject:item];
 			
-		} while ((element = element->nextSibling));
+		} while (element = element->nextSibling);
 	}		
 	[tbxml release];
 	return array;

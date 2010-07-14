@@ -5,8 +5,13 @@
 
 @synthesize currentItem;
 
+@synthesize description;
+@synthesize categories;
+@synthesize publicationDate;
+
 - (void) viewWillAppear:(BOOL)animated {
 	self.title = currentItem.title;
+	categories.text = [currentItem.categories componentsJoinedByString:@", "];
 }
 
 /*
