@@ -6,17 +6,29 @@
 
 @implementation FeedParser
 
-+ (NSString*) niceStringFromElement:(TBXMLElement*) element  {
++ (NSString*) niceStringFromElement:(TBXMLElement*) element {
 	return [[TBXML textForElement:element] stringByDecodingXMLEntities];
 }
 
-+ (NSString*) valueWithName:(NSString*) name fromElement:(TBXMLElement*) element  {
++ (NSNumber*) numberWithName:(NSString*) name fromElement:(TBXMLElement*) element {
 	TBXMLElement* childElement = [TBXML childElementNamed:name parentElement:element];
+	if (childElement == nil) {
+		return 0;
+	}
+	NSString* text = [TBXML textForElement:childElement];
+	return [[[NSNumberFormatter alloc] init] numberFromString: text];
+}
+
++ (NSString*) valueWithName:(NSString*) name fromElement:(TBXMLElement*) element {
+	TBXMLElement* childElement = [TBXML childElementNamed:name parentElement:element];
+	if (childElement == nil) {
+		return nil;
+	}
 	NSString* text = [self niceStringFromElement: childElement];
 	return text;
 }
 
-+ (NSArray*) arrayWithName:(NSString*) name fromElement:(TBXMLElement*) element  {
++ (NSArray*) arrayWithName:(NSString*) name fromElement:(TBXMLElement*) element {
 	TBXMLElement* childElement = [TBXML childElementNamed:name parentElement:element];
 	NSMutableArray* array = [[NSMutableArray alloc] init];
 	do {	
@@ -31,7 +43,7 @@
 	return array;
 }
 
-+ (NSArray*) parseItemsFromURL:(NSString *) urlString{
++ (NSArray*) parseItemsFromURL:(NSString *) urlString {
 	TBXML* tbxml = [[TBXML tbxmlWithURL:[NSURL URLWithString:urlString]] retain];
 	TBXMLElement* rootXMLElement = tbxml.rootXMLElement;
 	NSMutableArray* array = [[NSMutableArray alloc] init];
@@ -45,7 +57,12 @@
 			Item* item = [[[Item alloc] init] autorelease];
 			item.title = [self valueWithName:@"title" fromElement:element];
 			item.description = [self valueWithName:@"description" fromElement:element];
+			item.link = [self valueWithName:@"link" fromElement:element];
+			item.thumbnail = [self valueWithName:@"dz:thumbnail" fromElement:element];
+			item.clickCount = [self numberWithName:@"dz:clickCount" fromElement:element];
+			
 			item.categories = [self arrayWithName:@"category" fromElement:element];
+			
 			[array addObject:item];
 			
 		} while (element = element->nextSibling);

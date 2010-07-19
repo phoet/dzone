@@ -5,13 +5,18 @@
 
 @synthesize currentItem;
 
-@synthesize description;
-@synthesize categories;
-@synthesize publicationDate;
+@synthesize description, categories, publicationDate, clickCount;
+
+@synthesize thumbnail;
 
 - (void) viewWillAppear:(BOOL)animated {
 	self.title = currentItem.title;
+	
+	description.text = currentItem.description;
+	clickCount.text = [currentItem.clickCount stringValue];
+	publicationDate.text = [[[NSDateFormatter alloc] init] stringFromDate: currentItem.publicationDate];
 	categories.text = [currentItem.categories componentsJoinedByString:@", "];
+	thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: currentItem.thumbnail]]];
 }
 
 /*

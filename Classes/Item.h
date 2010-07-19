@@ -27,12 +27,28 @@
 @interface Item : NSObject {
 	
 	NSString* title;
+	NSString* link;
 	NSString* description;
+	NSString* thumbnail;
+	NSNumber* linkId;
+	NSNumber* voteUpCount;
+	NSNumber* voteDownCount;
+	NSNumber* clickCount;
+	NSNumber* commentCount;
+	NSDate* publicationDate;
 	NSArray* categories;
 }
 
 @property(nonatomic, retain) NSString* title;
+@property(nonatomic, retain) NSString* link;
 @property(nonatomic, retain) NSString* description;
+@property(nonatomic, retain) NSString* thumbnail;
+@property(nonatomic, retain) NSNumber* linkId;
+@property(nonatomic, retain) NSNumber* voteUpCount;
+@property(nonatomic, retain) NSNumber* voteDownCount;
+@property(nonatomic, retain) NSNumber* clickCount;
+@property(nonatomic, retain) NSNumber* commentCount;
+@property(nonatomic, retain) NSDate* publicationDate;
 @property(nonatomic, retain) NSArray* categories;
 
 @end
