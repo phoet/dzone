@@ -22,6 +22,7 @@
 		4EFB4C3111ED1EB000529BF9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2711ED1EB000529BF9 /* RootViewController.m */; };
 		4EFB4C3211ED1EB000529BF9 /* DZoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */; };
 		4EFB4C3311ED1EB000529BF9 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2D11ED1EB000529BF9 /* Item.m */; };
+		8325B11D11F5D11200CF181C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325B11C11F5D11200CF181C /* icon.png */; };
 		83A2711511ED928200C8AD60 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2711411ED928200C8AD60 /* NSString+XMLEntities.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		4EFB4C2C11ED1EB000529BF9 /* FeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedParser.h; sourceTree = "<group>"; };
 		4EFB4C2D11ED1EB000529BF9 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		4EFB4C2E11ED1EB000529BF9 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		8325B11C11F5D11200CF181C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		83A2711311ED928200C8AD60 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
 		83A2711411ED928200C8AD60 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8325B11C11F5D11200CF181C /* icon.png */,
 				4EFB4C1F11ED1E6B00529BF9 /* DetailView.xib */,
 				4EFB4C2011ED1E6B00529BF9 /* RootViewController.xib */,
 				4EFB4C2111ED1E6B00529BF9 /* MainWindow.xib */,
@@ -207,6 +210,7 @@
 				4EFB4C2211ED1E6B00529BF9 /* DetailView.xib in Resources */,
 				4EFB4C2311ED1E6B00529BF9 /* RootViewController.xib in Resources */,
 				4EFB4C2411ED1E6B00529BF9 /* MainWindow.xib in Resources */,
+				8325B11D11F5D11200CF181C /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
