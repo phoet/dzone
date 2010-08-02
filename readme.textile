@@ -13,6 +13,7 @@ h2. Current Features for Version 0.0.1
 
 h2. Planned Features
 
+* use http://github.com/probablycorey/seriously with my dzone_api
 * open article in browser
 * vote up, vote down from detail view using personal credentials
 * reload button
@@ -22,6 +23,8 @@ h2. Planned Features
 * store older feed values like twitter app (offline mode?)
 
 h2. Screenshots
+
+update me!
 
 !http://dl.dropbox.com/u/153067/Bildschirmfoto%202010-07-12%20um%2021.23.24.png(dzone Feed)!:http://github.com/phoet/dzone
 
