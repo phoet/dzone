@@ -6,27 +6,22 @@ See the Screenshots for details.
 
 h2. Current Features for Version 0.0.1
 
-* synchronously load dzone frontpage feed and display it
-* use TBXML DOM parsing for dzone feed
-* handling of XML-entities
+* asynchronously load dzone frontpage feed from "dzone-api.heroku.com":http://dzone-api.heroku.com
+* use "Seriously":http://github.com/probablycorey/seriously for JSON parsing
 * detail view of feed items
 
 h2. Planned Features
 
-* use http://github.com/probablycorey/seriously with my dzone_api
 * open article in browser
 * vote up, vote down from detail view using personal credentials
 * reload button
-* asynchronous download (with spinner)
 * personal feed
 * personal login credentials and other settings
 * store older feed values like twitter app (offline mode?)
 
 h2. Screenshots
 
-update me!
-
-!http://dl.dropbox.com/u/153067/Bildschirmfoto%202010-07-12%20um%2021.23.24.png(dzone Feed)!:http://github.com/phoet/dzone
+!http://dl.dropbox.com/u/153067/dzone_screens.png(dzone Feed)!:http://github.com/phoet/dzone
 
 h2. Credits
 
