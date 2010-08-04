@@ -1,7 +1,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController {
+@interface DetailViewController : UIViewController <UINavigationBarDelegate> {
 
 	NSDictionary* currentItem;
 	

@@ -175,12 +175,12 @@
 			isa = PBXGroup;
 			children = (
 				83A248EB1209A4C800B51823 /* json */,
+				83A249081209A4C800B51823 /* xml */,
 				83A249031209A4C800B51823 /* Seriously.h */,
 				83A249041209A4C800B51823 /* Seriously.m */,
 				83A249051209A4C800B51823 /* SeriouslyConstants.h */,
 				83A249061209A4C800B51823 /* SeriouslyOperation.h */,
 				83A249071209A4C800B51823 /* SeriouslyOperation.m */,
-				83A249081209A4C800B51823 /* xml */,
 			);
 			name = Seriously;
 			path = seriously;

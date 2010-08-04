@@ -16,10 +16,12 @@
 	titleBar.topItem.title = [currentItem valueForKey:@"title"];
 	categoriesBar.topItem.title = [currentItem valueForKey:@"categories"];
 	
-	description.text = [currentItem valueForKey:@"description"];
+	description.text = [[currentItem valueForKey:@"title"] stringByAppendingFormat:@"\n\n%@", [currentItem valueForKey:@"description"], nil];
+	
 	clicks.text = [[[currentItem valueForKey:@"clicks"] stringValue] stringByAppendingString:@" clicks"];
 	scores.text = [[[currentItem valueForKey:@"vote_up"] stringValue] stringByAppendingString:@" vote-ups"];
 	comments.text = [[[currentItem valueForKey:@"comments"] stringValue] stringByAppendingString:@" comments"];
+	
 	thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [currentItem valueForKey:@"thumbnail"]]]];
 }
 

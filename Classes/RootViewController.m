@@ -3,7 +3,7 @@
 #import "DetailViewController.h"
 #import "Seriously.h"
 
-#define DZONE_URL @"http://localhost:3000/items.json"
+#define DZONE_URL @"http://dzone-api.heroku.com/items.json"
 
 @implementation RootViewController
 
@@ -31,10 +31,10 @@
 			for (NSDictionary* dict in body) {
 				[items addObject:dict];
 			}
-			[spinner stopAnimating];
-			[spinner removeFromSuperview];
 			[self.tableView reloadData];
         }
+		[spinner stopAnimating];
+		[spinner removeFromSuperview];
     }];
 }
 
