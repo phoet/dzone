@@ -3,10 +3,12 @@
 
 @interface RootViewController : UITableViewController {
 	
-	NSArray* items;
+	NSMutableArray* items;
+	UIActivityIndicatorView* spinner;
 	
 }
 
-@property (nonatomic, retain) NSArray * items;
+@property (nonatomic, retain) NSMutableArray* items;
+@property (nonatomic, retain) UIActivityIndicatorView* spinner;
 
 @end

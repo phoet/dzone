@@ -1,24 +1,41 @@
 
 #import "RootViewController.h"
 #import "DetailViewController.h"
-#import "Item.h"
-#import "FeedParser.h"
+#import "Seriously.h"
 
-#define DZONE_URL @"http://feeds.dzone.com/dzone/frontpage"
+#define DZONE_URL @"http://localhost:3000/items.json"
 
 @implementation RootViewController
 
 @synthesize items;
+@synthesize spinner;
 
 - (void)loadItems {
-	items = [FeedParser parseItemsFromURL: DZONE_URL];
-	if ([items count] == 0 ) {
-		NSString* errorMessage = [NSString stringWithFormat:@"Check your networking configuration, could not load %@", DZONE_URL];
-		UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"An Error Occured" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-		
-		[alertView show];
-		[alertView release];
-	}
+	items = [[NSMutableArray alloc] init];
+	spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	[spinner setCenter:CGPointMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0)];
+	[self.view addSubview:spinner];
+	[spinner startAnimating];
+	
+	[Seriously get:DZONE_URL handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
+        if (error) {
+			NSString* errorMessage = [NSString stringWithFormat:@"Check your networking configuration, could not load %@", DZONE_URL];
+			UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"An Error Occured" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			
+			[alertView show];
+			[alertView release];
+        }
+        else {
+            NSLog(@"Look, JSON is parsed into a dictionary!");
+			NSLog(@"body id @%body", body);
+			for (NSDictionary* dict in body) {
+				[items addObject:dict];
+			}
+			[spinner stopAnimating];
+			[spinner removeFromSuperview];
+			[self.tableView reloadData];
+        }
+    }];
 }
 
 #pragma mark -
@@ -92,13 +109,15 @@
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-	// Configure the cell.
-	Item* item = [items objectAtIndex: [indexPath row]];
-	cell.textLabel.font = [UIFont systemFontOfSize:12];
-	cell.textLabel.text = item.title;
-	cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
-	cell.detailTextLabel.text = item.description;
-
+	if ([items count] == 0) {
+		cell.textLabel.text = @"loading";
+	} else {
+		NSDictionary* item = [items objectAtIndex: [indexPath row]];
+		cell.textLabel.font = [UIFont systemFontOfSize:12];
+		cell.textLabel.text = [item valueForKey:@"title"];
+		cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
+		cell.detailTextLabel.text = [item valueForKey:@"description"];
+	}
     return cell;
 }
 
@@ -149,7 +168,7 @@
 - (void)showDetails:(NSIndexPath *)indexPath {
 	DetailViewController	* detailViewController = [[DetailViewController		alloc] initWithNibName:@"DetailView" bundle:nil];
 	NSUInteger row = [indexPath row];
-	Item * item = [items objectAtIndex:row];
+	NSDictionary* item = [items objectAtIndex:row];
 	detailViewController.currentItem = item;
 	// Pass the selected object to the new view controller.
 	[self.navigationController pushViewController:detailViewController animated:YES];

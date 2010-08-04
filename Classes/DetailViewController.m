@@ -6,22 +6,21 @@
 @synthesize titleBar, categoriesBar;
 @synthesize currentItem;
 @synthesize description;
-@synthesize score, clicks, comments;
+@synthesize scores, clicks, comments;
 @synthesize thumbnail;
 
 - (void) viewWillAppear:(BOOL)animated {
 	
 	self.title = @"Item Details";
 	
-	titleBar.topItem.title = currentItem.title;
-	categoriesBar.topItem.title = [currentItem.categories componentsJoinedByString:@", "];
+	titleBar.topItem.title = [currentItem valueForKey:@"title"];
+	categoriesBar.topItem.title = [currentItem valueForKey:@"categories"];
 	
-	description.text = currentItem.description;
-	clicks.text = [[currentItem.clickCount stringValue] stringByAppendingString:@" clicks"];
-	NSNumber* scoreNumber = [NSNumber numberWithInt:currentItem.voteUpCount - currentItem.voteDownCount];
-	score.text = [[scoreNumber stringValue] stringByAppendingString:@" score"];
-	comments.text = [[currentItem.commentCount stringValue] stringByAppendingString:@" comments"];
-	thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: currentItem.thumbnail]]];
+	description.text = [currentItem valueForKey:@"description"];
+	clicks.text = [[[currentItem valueForKey:@"clicks"] stringValue] stringByAppendingString:@" clicks"];
+	scores.text = [[[currentItem valueForKey:@"vote_up"] stringValue] stringByAppendingString:@" vote-ups"];
+	comments.text = [[[currentItem valueForKey:@"comments"] stringValue] stringByAppendingString:@" comments"];
+	thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [currentItem valueForKey:@"thumbnail"]]]];
 }
 
 /*
