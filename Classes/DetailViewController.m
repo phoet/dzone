@@ -3,19 +3,24 @@
 
 @implementation DetailViewController
 
+@synthesize titleBar, categoriesBar;
 @synthesize currentItem;
-
-@synthesize description, categories, publicationDate, clickCount;
-
+@synthesize description;
+@synthesize score, clicks, comments;
 @synthesize thumbnail;
 
 - (void) viewWillAppear:(BOOL)animated {
-	self.title = currentItem.title;
+	
+	self.title = @"Item Details";
+	
+	titleBar.topItem.title = currentItem.title;
+	categoriesBar.topItem.title = [currentItem.categories componentsJoinedByString:@", "];
 	
 	description.text = currentItem.description;
-	clickCount.text = [currentItem.clickCount stringValue];
-	publicationDate.text = [[[NSDateFormatter alloc] init] stringFromDate: currentItem.publicationDate];
-	categories.text = [currentItem.categories componentsJoinedByString:@", "];
+	clicks.text = [[currentItem.clickCount stringValue] stringByAppendingString:@" clicks"];
+	NSNumber* scoreNumber = [NSNumber numberWithInt:currentItem.voteUpCount - currentItem.voteDownCount];
+	score.text = [[scoreNumber stringValue] stringByAppendingString:@" score"];
+	comments.text = [[currentItem.commentCount stringValue] stringByAppendingString:@" comments"];
 	thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: currentItem.thumbnail]]];
 }
 

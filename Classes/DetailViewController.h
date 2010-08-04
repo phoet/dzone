@@ -6,10 +6,14 @@
 
 	Item* currentItem;
 	
-	IBOutlet UILabel* description;
-	IBOutlet UILabel* categories;
-	IBOutlet UILabel* publicationDate;
-	IBOutlet UILabel* clickCount;
+	IBOutlet UINavigationBar* titleBar;
+	IBOutlet UINavigationBar* categoriesBar;
+	
+	IBOutlet UITextView* description;
+	
+	IBOutlet UILabel* score;
+	IBOutlet UILabel* clicks;
+	IBOutlet UILabel* comments;
 	
 	IBOutlet UIImageView* thumbnail;
 
@@ -17,10 +21,15 @@
 
 @property (nonatomic, retain) Item* currentItem;
 
-@property (nonatomic, retain) IBOutlet UILabel* description;
-@property (nonatomic, retain) IBOutlet UILabel* categories;
-@property (nonatomic, retain) IBOutlet UILabel* publicationDate;
-@property (nonatomic, retain) IBOutlet UILabel* clickCount;
+@property (nonatomic, retain) IBOutlet UINavigationBar* titleBar;
+@property (nonatomic, retain) IBOutlet UINavigationBar* categoriesBar;
+
+@property (nonatomic, retain) IBOutlet UITextView* description;
+
+@property (nonatomic, retain) IBOutlet UILabel* score;
+@property (nonatomic, retain) IBOutlet UILabel* clicks;
+@property (nonatomic, retain) IBOutlet UILabel* comments;
+
 @property (nonatomic, retain) IBOutlet UIImageView* thumbnail;
 
 @end

@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.title = @"Uebersicht";
+	self.title = @"Latest Items";
 	[self loadItems];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
