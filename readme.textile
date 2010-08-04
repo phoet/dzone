@@ -22,10 +22,3 @@ h2. Planned Features
 h2. Screenshots
 
 !http://dl.dropbox.com/u/153067/dzone_screens.png(dzone Feed)!:http://github.com/phoet/dzone
-
-h2. Credits
-
-* "How To Choose The Best XML Parser for Your iPhone Project":http://www.raywenderlich.com/553/how-to-chose-the-best-xml-parser-for-your-iphone-project
-* "TBXML":http://www.tbxml.co.uk/
-* "MWFeedParser for XML-Entities":http://github.com/mwaterfall/MWFeedParser/
-* "Google Toolbox for Mac":http://code.google.com/p/google-toolbox-for-mac/
