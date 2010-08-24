@@ -1,5 +1,6 @@
 
 #import "DetailViewController.h"
+#import "Seriously.h"
 
 @implementation DetailViewController
 
@@ -21,7 +22,26 @@
 	scores.text = [[[currentItem valueForKey:@"vote_up"] stringValue] stringByAppendingString:@" vote-ups"];
 	comments.text = [[[currentItem valueForKey:@"comments"] stringValue] stringByAppendingString:@" comments"];
 	
-	thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [currentItem valueForKey:@"thumbnail"]]]];
+	UIActivityIndicatorView* spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	[spinner setCenter:CGPointMake(thumbnail.frame.size.width/2.0, thumbnail.frame.size.height/2.0)];
+	[thumbnail addSubview:spinner];
+	[spinner startAnimating];
+	
+	[Seriously get:[currentItem valueForKey:@"thumbnail"] handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
+        if (error) {
+			NSString* errorMessage = [NSString stringWithFormat:@"Check your networking configuration, could not load image from %@", [currentItem valueForKey:@"thumbnail"]];
+			UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"An Error Occured" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			
+			[alertView show];
+			[alertView release];
+        }
+        else {
+            NSLog(@"image loaded from %@!", [currentItem valueForKey:@"thumbnail"]);
+			[spinner stopAnimating];
+			[spinner removeFromSuperview];
+			thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [currentItem valueForKey:@"thumbnail"]]]];
+        }
+    }];
 }
 
 /*
