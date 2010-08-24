@@ -18,6 +18,8 @@
 
 }
 
+- (IBAction)showInBrowser:(id)sender;
+
 @property (nonatomic, retain) NSDictionary* currentItem;
 
 @property (nonatomic, retain) IBOutlet UINavigationBar* titleBar;

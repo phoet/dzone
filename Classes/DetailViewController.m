@@ -1,6 +1,7 @@
 
 #import "DetailViewController.h"
 #import "Seriously.h"
+#import "BrowserViewController.h"
 
 @implementation DetailViewController
 
@@ -16,7 +17,7 @@
 	titleBar.topItem.title = [currentItem valueForKey:@"title"];
 	categoriesBar.topItem.title = [currentItem valueForKey:@"categories"];
 	
-	description.text = [[currentItem valueForKey:@"title"] stringByAppendingFormat:@"\n\n%@", [currentItem valueForKey:@"description"], nil];
+	description.text = [currentItem valueForKey:@"description"];
 	
 	clicks.text = [[[currentItem valueForKey:@"clicks"] stringValue] stringByAppendingString:@" clicks"];
 	scores.text = [[[currentItem valueForKey:@"vote_up"] stringValue] stringByAppendingString:@" vote-ups"];
@@ -42,6 +43,15 @@
 			thumbnail.image = [UIImage imageWithData: [NSData dataWithContentsOfURL: [NSURL URLWithString: [currentItem valueForKey:@"thumbnail"]]]];
         }
     }];
+}
+
+
+- (IBAction)showInBrowser:(id)sender{
+	BrowserViewController* browserViewController = [[BrowserViewController alloc] initWithNibName:@"BrowserViewController" bundle:nil];
+	NSDictionary* item = currentItem;
+	browserViewController.currentItem = item;
+	[self.navigationController pushViewController:browserViewController animated:YES];
+	[browserViewController release];
 }
 
 /*

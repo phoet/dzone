@@ -17,6 +17,8 @@
 		4EFB4C2F11ED1EB000529BF9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2511ED1EB000529BF9 /* DetailViewController.m */; };
 		4EFB4C3111ED1EB000529BF9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2711ED1EB000529BF9 /* RootViewController.m */; };
 		4EFB4C3211ED1EB000529BF9 /* DZoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */; };
+		83094ACF1223B2F100537B3B /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83094ACD1223B2F100537B3B /* BrowserViewController.m */; };
+		83094AD01223B2F100537B3B /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83094ACE1223B2F100537B3B /* BrowserViewController.xib */; };
 		8325B11D11F5D11200CF181C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325B11C11F5D11200CF181C /* icon.png */; };
 		834B10711209948A009F188D /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834B10701209948A009F188D /* MainWindow-iPad.xib */; };
 		83A2490B1209A4C800B51823 /* SeriouslyJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A248ED1209A4C800B51823 /* SeriouslyJSON.m */; };
@@ -49,6 +51,9 @@
 		4EFB4C2911ED1EB000529BF9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4EFB4C2A11ED1EB000529BF9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4EFB4C2B11ED1EB000529BF9 /* DZoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZoneAppDelegate.h; sourceTree = "<group>"; };
+		83094ACC1223B2F100537B3B /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		83094ACD1223B2F100537B3B /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
+		83094ACE1223B2F100537B3B /* BrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BrowserViewController.xib; path = Classes/BrowserViewController.xib; sourceTree = "<group>"; };
 		8325B11C11F5D11200CF181C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		834B10701209948A009F188D /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		83A248EC1209A4C800B51823 /* SeriouslyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyJSON.h; sourceTree = "<group>"; };
@@ -105,6 +110,8 @@
 				4EFB4C2711ED1EB000529BF9 /* RootViewController.m */,
 				4EFB4C2911ED1EB000529BF9 /* DetailViewController.h */,
 				4EFB4C2511ED1EB000529BF9 /* DetailViewController.m */,
+				83094ACC1223B2F100537B3B /* BrowserViewController.h */,
+				83094ACD1223B2F100537B3B /* BrowserViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83094ACE1223B2F100537B3B /* BrowserViewController.xib */,
 				8325B11C11F5D11200CF181C /* icon.png */,
 				4EFB4C1F11ED1E6B00529BF9 /* DetailView.xib */,
 				4EFB4C2011ED1E6B00529BF9 /* RootViewController.xib */,
@@ -286,6 +294,7 @@
 				4EFB4C2411ED1E6B00529BF9 /* MainWindow.xib in Resources */,
 				8325B11D11F5D11200CF181C /* icon.png in Resources */,
 				834B10711209948A009F188D /* MainWindow-iPad.xib in Resources */,
+				83094AD01223B2F100537B3B /* BrowserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +320,7 @@
 				83A249131209A4C800B51823 /* Seriously.m in Sources */,
 				83A249141209A4C800B51823 /* SeriouslyOperation.m in Sources */,
 				83A249151209A4C800B51823 /* SeriouslyXML.m in Sources */,
+				83094ACF1223B2F100537B3B /* BrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,10 +9,10 @@ h2. Current Features for Version 0.0.1
 * asynchronously load dzone frontpage feed from "dzone-api.heroku.com":http://dzone-api.heroku.com
 * use "Seriously":http://github.com/probablycorey/seriously for JSON parsing
 * detail view of feed items
+* open article in browser
 
 h2. Planned Features
 
-* open article in browser
 * vote up, vote down from detail view using personal credentials
 * reload button
 * personal feed
