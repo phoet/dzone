@@ -10,7 +10,6 @@
 @synthesize thumbnail;
 
 - (void) viewWillAppear:(BOOL)animated {
-	
 	self.title = @"Item Details";
 	
 	titleBar.topItem.title = [currentItem valueForKey:@"title"];
