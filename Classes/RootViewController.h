@@ -1,7 +1,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController {
+@interface RootViewController : UITableViewController <UITableViewDelegate> {
 	
 	NSMutableArray* items;
 	UIActivityIndicatorView* spinner;

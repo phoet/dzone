@@ -5,17 +5,31 @@
 
 @implementation DetailViewController
 
-@synthesize titleBar, categoriesBar;
 @synthesize currentItem;
 @synthesize description;
-@synthesize scores, clicks, comments;
+@synthesize itemTitle, categories, scores, clicks, comments;
 @synthesize thumbnail;
+@synthesize spinner;
+
+#pragma mark -
+#pragma mark IBAction
+
+- (IBAction)showInBrowser:(id)sender{
+	BrowserViewController* browserViewController = [[BrowserViewController alloc] initWithNibName:@"BrowserViewController" bundle:nil];
+	NSDictionary* item = currentItem;
+	browserViewController.currentItem = item;
+	[self.navigationController pushViewController:browserViewController animated:YES];
+	[browserViewController release];
+}
+
+#pragma mark -
+#pragma mark UIViewController
 
 - (void) viewWillAppear:(BOOL)animated {
 	self.title = @"Item Details";
 	
-	titleBar.topItem.title = [currentItem valueForKey:@"title"];
-	categoriesBar.topItem.title = [currentItem valueForKey:@"categories"];
+	itemTitle.text = [currentItem valueForKey:@"title"];
+	categories.text = [currentItem valueForKey:@"categories"];
 	
 	description.text = [currentItem valueForKey:@"description"];
 	
@@ -23,9 +37,6 @@
 	scores.text = [[[currentItem valueForKey:@"vote_up"] stringValue] stringByAppendingString:@" vote-ups"];
 	comments.text = [[[currentItem valueForKey:@"comments"] stringValue] stringByAppendingString:@" comments"];
 	
-	UIActivityIndicatorView* spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-	[spinner setCenter:CGPointMake(thumbnail.frame.size.width/2.0, thumbnail.frame.size.height/2.0)];
-	[thumbnail addSubview:spinner];
 	[spinner startAnimating];
 	
 	[Seriously get:[currentItem valueForKey:@"thumbnail"] handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
@@ -45,63 +56,32 @@
     }];
 }
 
-
-- (IBAction)showInBrowser:(id)sender{
-	BrowserViewController* browserViewController = [[BrowserViewController alloc] initWithNibName:@"BrowserViewController" bundle:nil];
-	NSDictionary* item = currentItem;
-	browserViewController.currentItem = item;
-	[self.navigationController pushViewController:browserViewController animated:YES];
-	[browserViewController release];
-}
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-*/
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    
+	self.currentItem = nil;
+	self.description = nil;
+	self.itemTitle = nil;
+	self.categories = nil;
+	self.scores = nil;
+	self.clicks = nil;
+	self.comments = nil;
+	self.thumbnail = nil;
+	self.spinner = nil;
 }
-
 
 - (void)dealloc {
+	[currentItem release];
+	[description release];
+	[itemTitle release]; 
+	[categories release];
+	[scores release]; 
+	[clicks release]; 
+	[comments release];
+	[thumbnail release];
+	[spinner release];
+	
     [super dealloc];
 }
-
 
 @end
