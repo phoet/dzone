@@ -1,11 +1,41 @@
 
 #import "BrowserViewController.h"
+#import "Seriously.h"
 
 @implementation BrowserViewController
 
-@synthesize webView;
 @synthesize currentItem;
+@synthesize voteButton;
+@synthesize webView;
 @synthesize spinner;
+
+#pragma mark -
+#pragma mark IBAction
+
+- (IBAction) vote{
+	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+	NSString* user = [defaults stringForKey:@"user_preference"];
+	NSString* pass = [defaults stringForKey:@"pass_preference"];
+	
+	voteButton.enabled = NO;
+	
+	NSString* item_id = [currentItem valueForKey:@"id"];
+	NSString* urlString = [NSString stringWithFormat:@"http://dzone-api.heroku.com/items/%@/vote/%@/%@", item_id, user, pass, nil];
+	NSLog(@"url %@", urlString, nil);
+	
+	[Seriously get:urlString handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
+        if (error) {
+			UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"An Error Occured" message:@"Check your networking configuration, could add vote!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			
+			[alertView show];
+			[alertView release];
+        }
+        else {
+			NSLog(@"body id %@", body);
+			voteButton.titleLabel.text = @"Done";
+        }
+    }];
+}
 
 #pragma mark -
 #pragma mark UIWebViewDelegate

@@ -21,6 +21,7 @@
 		83094AD01223B2F100537B3B /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83094ACE1223B2F100537B3B /* BrowserViewController.xib */; };
 		8325B11D11F5D11200CF181C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325B11C11F5D11200CF181C /* icon.png */; };
 		834B10711209948A009F188D /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834B10701209948A009F188D /* MainWindow-iPad.xib */; };
+		839A59F412256CC8003A8C75 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 839A59F312256CC8003A8C75 /* Settings.bundle */; };
 		83A2490B1209A4C800B51823 /* SeriouslyJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A248ED1209A4C800B51823 /* SeriouslyJSON.m */; };
 		83A2490C1209A4C800B51823 /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = 83A248F31209A4C800B51823 /* yajl.c */; };
 		83A2490D1209A4C800B51823 /* yajl_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 83A248F41209A4C800B51823 /* yajl_alloc.c */; };
@@ -56,6 +57,7 @@
 		83094ACE1223B2F100537B3B /* BrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BrowserViewController.xib; path = Classes/BrowserViewController.xib; sourceTree = "<group>"; };
 		8325B11C11F5D11200CF181C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		834B10701209948A009F188D /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		839A59F312256CC8003A8C75 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		83A248EC1209A4C800B51823 /* SeriouslyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyJSON.h; sourceTree = "<group>"; };
 		83A248ED1209A4C800B51823 /* SeriouslyJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyJSON.m; sourceTree = "<group>"; };
 		83A248F01209A4C800B51823 /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				4EFB4C2011ED1E6B00529BF9 /* RootViewController.xib */,
 				4EFB4C2111ED1E6B00529BF9 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* dzone-Info.plist */,
+				839A59F312256CC8003A8C75 /* Settings.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				8325B11D11F5D11200CF181C /* icon.png in Resources */,
 				834B10711209948A009F188D /* MainWindow-iPad.xib in Resources */,
 				83094AD01223B2F100537B3B /* BrowserViewController.xib in Resources */,
+				839A59F412256CC8003A8C75 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

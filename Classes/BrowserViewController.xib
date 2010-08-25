@@ -66,7 +66,7 @@
 						<bool key="IBUIHidesWhenStopped">NO</bool>
 						<int key="IBUIStyle">2</int>
 					</object>
-					<object class="IBUIButton" id="352152110">
+					<object class="IBUIButton" id="643136292">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrame">{{97, 5}, {125, 25}}</string>
@@ -81,8 +81,9 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
+						<string key="IBUIDisabledTitle">Voted</string>
 						<string key="IBUINormalTitle">Vote Up</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="761073431">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="862226248">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -98,7 +99,7 @@
 				</object>
 				<string key="NSFrameSize">{320, 416}</string>
 				<reference key="NSSuperview"/>
-				<reference key="IBUIBackgroundColor" ref="761073431"/>
+				<reference key="IBUIBackgroundColor" ref="862226248"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
 					<int key="IBUIBarStyle">1</int>
@@ -142,6 +143,23 @@
 					</object>
 					<int key="connectionID">8</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">vote</string>
+						<reference key="source" ref="643136292"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">10</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">voteButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="643136292"/>
+					</object>
+					<int key="connectionID">11</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -158,7 +176,7 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="315550278"/>
-							<reference ref="352152110"/>
+							<reference ref="643136292"/>
 							<reference ref="283046088"/>
 						</object>
 						<reference key="parent" ref="0"/>
@@ -186,7 +204,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
-						<reference key="object" ref="352152110"/>
+						<reference key="object" ref="643136292"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -230,7 +248,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">9</int>
+			<int key="maxID">11</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -238,16 +256,29 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">BrowserViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">vote</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">vote</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">vote</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>spinner</string>
+							<string>voteButton</string>
 							<string>webView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIActivityIndicatorView</string>
+							<string>UIButton</string>
 							<string>UIWebView</string>
 						</object>
 					</object>
@@ -256,6 +287,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>spinner</string>
+							<string>voteButton</string>
 							<string>webView</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -263,6 +295,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">spinner</string>
 								<string key="candidateClassName">UIActivityIndicatorView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">voteButton</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">webView</string>

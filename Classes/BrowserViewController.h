@@ -15,9 +15,13 @@
 	
 	IBOutlet UIWebView* webView;
 	IBOutlet UIActivityIndicatorView* spinner;
+	IBOutlet UIButton* voteButton;
 }
 
+- (IBAction) vote;
+
 @property (nonatomic, retain) NSDictionary* currentItem;
+@property (nonatomic, retain) UIButton* voteButton;
 @property (nonatomic, retain) UIWebView* webView;
 @property (nonatomic, retain) UIActivityIndicatorView* spinner;
 
