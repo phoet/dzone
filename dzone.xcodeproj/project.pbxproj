@@ -19,8 +19,9 @@
 		4EFB4C3211ED1EB000529BF9 /* DZoneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB4C2811ED1EB000529BF9 /* DZoneAppDelegate.m */; };
 		83094ACF1223B2F100537B3B /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83094ACD1223B2F100537B3B /* BrowserViewController.m */; };
 		83094AD01223B2F100537B3B /* BrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83094ACE1223B2F100537B3B /* BrowserViewController.xib */; };
-		8325B11D11F5D11200CF181C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325B11C11F5D11200CF181C /* icon.png */; };
-		834B10711209948A009F188D /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 834B10701209948A009F188D /* MainWindow-iPad.xib */; };
+		836379781226A42600430D51 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 836379771226A42600430D51 /* Default.png */; };
+		838E56391226A02A005006F7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 838E56381226A02A005006F7 /* Icon.png */; };
+		838E56581226A1DA005006F7 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 838E56571226A1DA005006F7 /* Icon-72.png */; };
 		839A59F412256CC8003A8C75 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 839A59F312256CC8003A8C75 /* Settings.bundle */; };
 		83A2490B1209A4C800B51823 /* SeriouslyJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A248ED1209A4C800B51823 /* SeriouslyJSON.m */; };
 		83A2490C1209A4C800B51823 /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = 83A248F31209A4C800B51823 /* yajl.c */; };
@@ -33,7 +34,6 @@
 		83A249131209A4C800B51823 /* Seriously.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A249041209A4C800B51823 /* Seriously.m */; };
 		83A249141209A4C800B51823 /* SeriouslyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A249071209A4C800B51823 /* SeriouslyOperation.m */; };
 		83A249151209A4C800B51823 /* SeriouslyXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2490A1209A4C800B51823 /* SeriouslyXML.m */; };
-		83BD331912264CCC008058D7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BD331812264CCC008058D7 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +56,9 @@
 		83094ACC1223B2F100537B3B /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
 		83094ACD1223B2F100537B3B /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserViewController.m; sourceTree = "<group>"; };
 		83094ACE1223B2F100537B3B /* BrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BrowserViewController.xib; path = Classes/BrowserViewController.xib; sourceTree = "<group>"; };
-		8325B11C11F5D11200CF181C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		834B10701209948A009F188D /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		836379771226A42600430D51 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		838E56381226A02A005006F7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		838E56571226A1DA005006F7 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		839A59F312256CC8003A8C75 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		83A248EC1209A4C800B51823 /* SeriouslyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyJSON.h; sourceTree = "<group>"; };
 		83A248ED1209A4C800B51823 /* SeriouslyJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyJSON.m; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		83A249071209A4C800B51823 /* SeriouslyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyOperation.m; sourceTree = "<group>"; };
 		83A249091209A4C800B51823 /* SeriouslyXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyXML.h; sourceTree = "<group>"; };
 		83A2490A1209A4C800B51823 /* SeriouslyXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyXML.m; sourceTree = "<group>"; };
-		83BD331812264CCC008058D7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +135,6 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				834B106F12099489009F188D /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				4E032D6B11E7C2F4006D1030 /* readme.textile */,
@@ -155,14 +154,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				838E56571226A1DA005006F7 /* Icon-72.png */,
+				838E56381226A02A005006F7 /* Icon.png */,
 				83094ACE1223B2F100537B3B /* BrowserViewController.xib */,
-				8325B11C11F5D11200CF181C /* icon.png */,
 				4EFB4C1F11ED1E6B00529BF9 /* DetailView.xib */,
 				4EFB4C2011ED1E6B00529BF9 /* RootViewController.xib */,
 				4EFB4C2111ED1E6B00529BF9 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* dzone-Info.plist */,
 				839A59F312256CC8003A8C75 /* Settings.bundle */,
-				83BD331812264CCC008058D7 /* Default.png */,
+				836379771226A42600430D51 /* Default.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -175,14 +175,6 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		834B106F12099489009F188D /* Resources-iPad */ = {
-			isa = PBXGroup;
-			children = (
-				834B10701209948A009F188D /* MainWindow-iPad.xib */,
-			);
-			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		83A248EA1209A4C800B51823 /* Seriously */ = {
@@ -298,11 +290,11 @@
 				4EFB4C2211ED1E6B00529BF9 /* DetailView.xib in Resources */,
 				4EFB4C2311ED1E6B00529BF9 /* RootViewController.xib in Resources */,
 				4EFB4C2411ED1E6B00529BF9 /* MainWindow.xib in Resources */,
-				8325B11D11F5D11200CF181C /* icon.png in Resources */,
-				834B10711209948A009F188D /* MainWindow-iPad.xib in Resources */,
 				83094AD01223B2F100537B3B /* BrowserViewController.xib in Resources */,
 				839A59F412256CC8003A8C75 /* Settings.bundle in Resources */,
-				83BD331912264CCC008058D7 /* Default.png in Resources */,
+				838E56391226A02A005006F7 /* Icon.png in Resources */,
+				838E56581226A1DA005006F7 /* Icon-72.png in Resources */,
+				836379781226A42600430D51 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +400,7 @@
 				INFOPLIST_FILE = "dzone-Info.plist";
 				PRODUCT_NAME = dzone;
 				SDKROOT = iphoneos4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Distribution;
 		};
