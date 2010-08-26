@@ -5,7 +5,6 @@
 @implementation BrowserViewController
 
 @synthesize currentItem;
-@synthesize voteButton;
 @synthesize webView;
 @synthesize spinner;
 
@@ -17,6 +16,8 @@
 	NSString* user = [defaults stringForKey:@"user_preference"];
 	NSString* pass = [defaults stringForKey:@"pass_preference"];
 	
+	
+	UIBarButtonItem* voteButton = [self.toolbarItems objectAtIndex:1];
 	voteButton.enabled = NO;
 	
 	NSString* item_id = [currentItem valueForKey:@"id"];
@@ -32,7 +33,7 @@
         }
         else {
 			NSLog(@"body id %@", body);
-			voteButton.titleLabel.text = @"Done";
+			voteButton.title = @"Done";
         }
     }];
 }
@@ -42,6 +43,11 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
 	NSLog(@"web view finished loading");
+	
+	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Vote up" style:UIBarButtonItemStyleBordered target:self action:@selector(vote)] autorelease];
+	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
+	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil]];
+	
 	[self.spinner stopAnimating];
 	[self.spinner removeFromSuperview];
 }

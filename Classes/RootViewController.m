@@ -106,6 +106,11 @@
     [super viewDidLoad];
 	
 	self.title = @"Latest Items";
+
+	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Reload Items" style:UIBarButtonItemStyleBordered target:self action:@selector(doReload)] autorelease];
+	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
+	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil]];
+	
 	[self loadItems];
 }
 

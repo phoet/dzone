@@ -27,6 +27,10 @@
 
 - (void) viewWillAppear:(BOOL)animated {
 	self.title = @"Item Details";
+
+	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Open in Browser" style:UIBarButtonItemStyleBordered target:self action:@selector(showInBrowser:)] autorelease];
+	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
+	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil]];
 	
 	itemTitle.text = [currentItem valueForKey:@"title"];
 	categories.text = [currentItem valueForKey:@"categories"];
