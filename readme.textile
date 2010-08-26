@@ -1,24 +1,26 @@
-h1. About
+"dzone mobile" the DZone iPhone client! 
 
-dzone iPhone client, since these are my first iPhone SDK steps, don't expect too much...
-
-See the Screenshots for details.
-
-h2. Current Features for Version 0.0.1
+h3. Current Features for Version 0.0.1
 
 * asynchronously load dzone frontpage feed from "dzone-api.heroku.com":http://dzone-api.heroku.com
 * use "Seriously":http://github.com/probablycorey/seriously for JSON parsing
 * detail view of feed items
 * open article in browser
-
-h2. Planned Features
-
 * vote up, vote down from detail view using personal credentials
 * reload button
-* personal feed
 * personal login credentials and other settings
+
+h4. Planned
+
+* personal feed
 * store older feed values like twitter app (offline mode?)
 
-h2. Screenshots
+h3. Resources
+
+"iPhone client source on DZone":http://github.com/phoet/dzone
+"DZone API source":http://github.com/phoet/dzone_api
+"DZone API on Heroku":http://dzone-api.heroku.com/
+
+h3. Screenshots
 
 !http://dl.dropbox.com/u/153067/dzone_screens.png(dzone Feed)!:http://github.com/phoet/dzone
