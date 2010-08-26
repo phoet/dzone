@@ -15,7 +15,7 @@
 
 - (void)loadItems {
 	items = [[NSMutableArray alloc] init];
-	spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	[spinner setCenter:CGPointMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0)];
 	[self.view addSubview:spinner];
 	[spinner startAnimating];
@@ -109,7 +109,7 @@
 
 	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Reload Items" style:UIBarButtonItemStyleBordered target:self action:@selector(doReload)] autorelease];
 	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil]];
+	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil] animated:YES];
 	
 	[self loadItems];
 }

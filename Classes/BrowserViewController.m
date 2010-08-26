@@ -16,7 +16,6 @@
 	NSString* user = [defaults stringForKey:@"user_preference"];
 	NSString* pass = [defaults stringForKey:@"pass_preference"];
 	
-	
 	UIBarButtonItem* voteButton = [self.toolbarItems objectAtIndex:1];
 	voteButton.enabled = NO;
 	
@@ -34,6 +33,7 @@
         else {
 			NSLog(@"body id %@", body);
 			voteButton.title = @"Done";
+			[currentItem setValue:@"YES" forKey:@"voted"];
         }
     }];
 }
@@ -44,9 +44,8 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
 	NSLog(@"web view finished loading");
 	
-	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Vote up" style:UIBarButtonItemStyleBordered target:self action:@selector(vote)] autorelease];
-	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil]];
+	UIBarButtonItem* voteButton = [self.toolbarItems objectAtIndex:1];
+	voteButton.title = @"Vote up";
 	
 	[self.spinner stopAnimating];
 	[self.spinner removeFromSuperview];
@@ -57,6 +56,11 @@
 
 - (void) viewWillAppear:(BOOL)animated {
 	self.title = @"Browser Details";
+	
+	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Loading Page" style:UIBarButtonItemStyleBordered target:self action:@selector(vote)] autorelease];
+	button.enabled = [currentItem valueForKey:@"voted"] ? NO : YES;
+	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
+	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil] animated:YES];
 
 	[self.spinner startAnimating];
 	
