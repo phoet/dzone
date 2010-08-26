@@ -33,6 +33,7 @@
 		83A249131209A4C800B51823 /* Seriously.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A249041209A4C800B51823 /* Seriously.m */; };
 		83A249141209A4C800B51823 /* SeriouslyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A249071209A4C800B51823 /* SeriouslyOperation.m */; };
 		83A249151209A4C800B51823 /* SeriouslyXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A2490A1209A4C800B51823 /* SeriouslyXML.m */; };
+		83BD331912264CCC008058D7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BD331812264CCC008058D7 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		83A249071209A4C800B51823 /* SeriouslyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyOperation.m; sourceTree = "<group>"; };
 		83A249091209A4C800B51823 /* SeriouslyXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeriouslyXML.h; sourceTree = "<group>"; };
 		83A2490A1209A4C800B51823 /* SeriouslyXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeriouslyXML.m; sourceTree = "<group>"; };
+		83BD331812264CCC008058D7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* dzone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "dzone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 				4EFB4C2111ED1E6B00529BF9 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* dzone-Info.plist */,
 				839A59F312256CC8003A8C75 /* Settings.bundle */,
+				83BD331812264CCC008058D7 /* Default.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				834B10711209948A009F188D /* MainWindow-iPad.xib in Resources */,
 				83094AD01223B2F100537B3B /* BrowserViewController.xib in Resources */,
 				839A59F412256CC8003A8C75 /* Settings.bundle in Resources */,
+				83BD331912264CCC008058D7 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +377,41 @@
 			};
 			name = Release;
 		};
+		83BD33271226567C008058D7 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.0;
+			};
+			name = Distribution;
+		};
+		83BD33281226567C008058D7 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../seriously\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = dzone_Prefix.pch;
+				INFOPLIST_FILE = "dzone-Info.plist";
+				PRODUCT_NAME = dzone;
+				SDKROOT = iphoneos4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Distribution;
+		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,6 +448,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				83BD33281226567C008058D7 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -418,6 +458,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				83BD33271226567C008058D7 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

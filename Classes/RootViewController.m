@@ -42,6 +42,13 @@
 }
 
 #pragma mark -
+#pragma mark IBAction
+
+- (IBAction) doReload{
+	[self loadItems];
+}
+
+#pragma mark -
 #pragma mark UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
