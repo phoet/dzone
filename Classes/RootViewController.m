@@ -13,8 +13,17 @@
 #pragma mark -
 #pragma mark HelperMethods
 
+- (BOOL)containsItem:(NSDictionary*) item{
+	for (NSDictionary* dict in self.items) {
+		if ([[dict valueForKey:@"id"] isEqualToNumber:[item valueForKey:@"id"]]) {
+			return YES;
+		}
+	}
+	return NO;
+}
+
 - (void)loadItems {
-	items = [[NSMutableArray alloc] init];
+	items = items ? items : [[NSMutableArray alloc] init];
 	spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	[spinner setCenter:CGPointMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0)];
 	[self.view addSubview:spinner];
@@ -32,7 +41,9 @@
             NSLog(@"Look, JSON is parsed into a dictionary!");
 			NSLog(@"body id @%body", body);
 			for (NSDictionary* dict in body) {
-				[items addObject:dict];
+				if (![self containsItem:dict]) {
+					[items addObject:dict];
+				}
 			}
 			[self.tableView reloadData];
         }
