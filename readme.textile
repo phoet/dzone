@@ -1,6 +1,11 @@
 "dzone mobile" the DZone iPhone client! 
 
-h3. Current Features for Version 0.0.1
+h3. Version 1.0.2
+
+* changed versioning sceme for appstore
+* fixed bug with opening item while reload the list
+
+h3. Version 0.0.1
 
 * asynchronously load dzone frontpage feed from "dzone-api.heroku.com":http://dzone-api.heroku.com
 * use "Seriously":http://github.com/probablycorey/seriously for JSON parsing
