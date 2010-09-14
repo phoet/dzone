@@ -3,12 +3,17 @@
 #import "DetailViewController.h"
 #import "Seriously.h"
 
-#define DZONE_URL @"http://dzone-api.heroku.com/items.json"
+//#define DZONE_URL @"http://dzone-api.heroku.com/items.json"
+#define DZONE_URL @"http://localhost:3000/items.json"
+#define NEXT_ITEMS 25
+#define START_ITEMS 50
+#define MAX_ITEMS 500
 
 @implementation RootViewController
 
 @synthesize items;
 @synthesize spinner;
+@synthesize limit;
 
 #pragma mark -
 #pragma mark HelperMethods
@@ -23,15 +28,24 @@
 }
 
 - (void)loadItems {
-	items = items ? items : [[NSMutableArray alloc] init];
+	if (spinner != nil) {
+		NSLog(@"Spinner is still active, skipping reload.");
+		return;
+	}
+
+	self.limit = [NSNumber numberWithInt: (self.limit == nil ? START_ITEMS : NEXT_ITEMS + [self.limit intValue]) ];
+	
 	spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	[spinner setCenter:CGPointMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0)];
 	[self.view addSubview:spinner];
 	[spinner startAnimating];
 	
-	[Seriously get:DZONE_URL handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
+	items = items ? items : [[NSMutableArray alloc] init];
+	
+	NSString* url = [NSString stringWithFormat:@"%@?limit=%@", DZONE_URL, self.limit];
+	[Seriously get:url handler:^(id body, NSHTTPURLResponse *response, NSError *error) {
         if (error) {
-			NSString* errorMessage = [NSString stringWithFormat:@"Check your networking configuration, could not load %@", DZONE_URL];
+			NSString* errorMessage = [NSString stringWithFormat:@"Check your networking configuration, could not load %@", url];
 			UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"An Error Occured" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			
 			[alertView show];
@@ -49,6 +63,8 @@
         }
 		[spinner stopAnimating];
 		[spinner removeFromSuperview];
+		[spinner release];
+		spinner = nil;
     }];
 }
 
@@ -60,7 +76,7 @@
 }
 
 #pragma mark -
-#pragma mark UITableViewDelegate
+#pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [items count];
@@ -86,6 +102,17 @@
 		cell.detailTextLabel.text = [item valueForKey:@"description"];
 	}
     return cell;
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"scrolling past %@", indexPath);
+	if (items && indexPath.row + 1 == [items count] && [self.limit intValue] < MAX_ITEMS) {
+		NSLog(@"reaching end, loading more items");
+		[self loadItems];
+	}
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -128,11 +155,16 @@
 - (void)viewDidUnload {
     self.items = nil;
 	self.spinner = nil;
+	self.limit = nil;
 }
+
+#pragma mark -
+#pragma mark LiveCycle
 
 - (void)dealloc {
 	[items release];
 	[spinner release];
+	[limit release];
 	
     [super dealloc];
 }

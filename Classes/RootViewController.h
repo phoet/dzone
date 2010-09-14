@@ -5,6 +5,7 @@
 	
 	NSMutableArray* items;
 	UIActivityIndicatorView* spinner;
+	NSNumber* limit;
 	
 }
 
@@ -12,5 +13,6 @@
 
 @property (nonatomic, retain) NSMutableArray* items;
 @property (nonatomic, retain) UIActivityIndicatorView* spinner;
+@property (nonatomic, retain) NSNumber* limit;
 
 @end
