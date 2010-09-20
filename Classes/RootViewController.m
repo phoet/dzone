@@ -3,8 +3,8 @@
 #import "DetailViewController.h"
 #import "Seriously.h"
 
-//#define DZONE_URL @"http://dzone-api.heroku.com/items.json"
-#define DZONE_URL @"http://localhost:3000/items.json"
+#define DZONE_URL @"http://dzone-api.heroku.com/items.json"
+//#define DZONE_URL @"http://localhost:3000/items.json"
 #define NEXT_ITEMS 25
 #define START_ITEMS 50
 #define MAX_ITEMS 500
@@ -107,14 +107,6 @@
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"scrolling past %@", indexPath);
-	if (items && indexPath.row + 1 == [items count] && [self.limit intValue] < MAX_ITEMS) {
-		NSLog(@"reaching end, loading more items");
-		[self loadItems];
-	}
-}
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
 }
@@ -140,12 +132,27 @@
 #pragma mark -
 #pragma mark UIViewController
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	if (event.type == UIEventSubtypeMotionShake) {
+		[self doReload];
+	}
+}
+
+- (BOOL)canBecomeFirstResponder {
+	return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	self.title = @"Latest Items";
 
-	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Reload Items" style:UIBarButtonItemStyleBordered target:self action:@selector(doReload)] autorelease];
+	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"More Items" style:UIBarButtonItemStyleBordered target:self action:@selector(doReload)] autorelease];
 	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
 	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil] animated:YES];
 	

@@ -11,12 +11,32 @@
 #pragma mark -
 #pragma mark IBAction
 
+- (IBAction) back{
+	if ([webView canGoBack]) {
+		[webView goBack];
+	}
+}
+
+- (IBAction) forward{
+	if ([webView canGoForward]) {
+		[webView goForward];
+	}
+}
+
 - (IBAction) vote{
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 	NSString* user = [defaults stringForKey:@"user_preference"];
 	NSString* pass = [defaults stringForKey:@"pass_preference"];
 	
-	UIBarButtonItem* voteButton = [self.toolbarItems objectAtIndex:1];
+	if (!user || !pass) {
+		UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Credentials missing!" message:@"Set your username and password in the settings application." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		
+		[alertView show];
+		[alertView release];
+		return;
+	}
+	
+	UIBarButtonItem* voteButton = [self.toolbarItems objectAtIndex:3];
 	voteButton.enabled = NO;
 	
 	NSString* item_id = [currentItem valueForKey:@"id"];
@@ -44,7 +64,12 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
 	NSLog(@"web view finished loading");
 	
-	UIBarButtonItem* voteButton = [self.toolbarItems objectAtIndex:1];
+	UIBarButtonItem* backButton = [self.toolbarItems objectAtIndex:1];
+	backButton.enabled = [self.webView canGoBack];
+	UIBarButtonItem* forwardButton = [self.toolbarItems objectAtIndex:2];
+	forwardButton.enabled = [self.webView canGoForward];
+	
+	UIBarButtonItem* voteButton = [self.toolbarItems objectAtIndex:3];
 	voteButton.title = @"Vote up";
 	
 	[self.spinner stopAnimating];
@@ -57,10 +82,15 @@
 - (void) viewWillAppear:(BOOL)animated {
 	self.title = @"Browser Details";
 	
+	UIBarButtonItem* backButton = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(back)] autorelease];
+	backButton.enabled = NO;
+	UIBarButtonItem* forwardButton = [[[UIBarButtonItem alloc] initWithTitle:@"Forward" style:UIBarButtonItemStyleBordered target:self action:@selector(forward)] autorelease];
+	forwardButton.enabled = NO;
+	
 	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Loading Page" style:UIBarButtonItemStyleBordered target:self action:@selector(vote)] autorelease];
 	button.enabled = [currentItem valueForKey:@"voted"] ? NO : YES;
 	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil] animated:YES];
+	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, backButton, forwardButton, button, spacer, nil] animated:YES];
 
 	[self.spinner startAnimating];
 	

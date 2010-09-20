@@ -2,8 +2,11 @@
 
 h3. Version 1.1.0
 
-* load more items reaching the end of the item-list
-* TODO browser back-front-button and open in browser button
+* change relaod button to load more items
+* add shake gesture to load more items
+* add browser back and foreward buttons
+* add open in safari button
+* check for credentials on vote
 
 h3. Version 1.0.2
 

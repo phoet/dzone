@@ -14,10 +14,13 @@
 #pragma mark -
 #pragma mark IBAction
 
-- (IBAction)showInBrowser:(id)sender{
+- (IBAction) showInSafari:(id) sender{
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString: [self.currentItem valueForKey:@"deep_link"]]];
+}
+
+- (IBAction) showInBrowser:(id) sender{
 	BrowserViewController* browserViewController = [[BrowserViewController alloc] initWithNibName:@"BrowserViewController" bundle:nil];
-	NSDictionary* item = currentItem;
-	browserViewController.currentItem = item;
+	browserViewController.currentItem = self.currentItem;
 	[self.navigationController pushViewController:browserViewController animated:YES];
 	[browserViewController release];
 }
@@ -28,9 +31,10 @@
 - (void) viewWillAppear:(BOOL)animated {
 	self.title = @"Item Details";
 
-	UIBarButtonItem* button = [[[UIBarButtonItem alloc] initWithTitle:@"Open in Browser" style:UIBarButtonItemStyleBordered target:self action:@selector(showInBrowser:)] autorelease];
+	UIBarButtonItem* openInBrowserButton = [[[UIBarButtonItem alloc] initWithTitle:@"Open in Browser" style:UIBarButtonItemStyleBordered target:self action:@selector(showInBrowser:)] autorelease];
+	UIBarButtonItem* openInSafariButton = [[[UIBarButtonItem alloc] initWithTitle:@"Open in Safari" style:UIBarButtonItemStyleBordered target:self action:@selector(showInSafari:)] autorelease];
 	UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, button, spacer, nil] animated:YES];
+	[self setToolbarItems:[NSMutableArray arrayWithObjects:spacer, openInBrowserButton, openInSafariButton, spacer, nil] animated:YES];
 	
 	itemTitle.text = [currentItem valueForKey:@"title"];
 	categories.text = [currentItem valueForKey:@"categories"];
