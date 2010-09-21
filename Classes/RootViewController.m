@@ -36,8 +36,8 @@
 	self.limit = [NSNumber numberWithInt: (self.limit == nil ? START_ITEMS : NEXT_ITEMS + [self.limit intValue]) ];
 	
 	spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-	[spinner setCenter:CGPointMake(self.view.frame.size.width/2.0, self.view.frame.size.height/2.0)];
-	[self.view addSubview:spinner];
+	[spinner setCenter:CGPointMake(self.tableView.frame.size.width/2.0, self.tableView.frame.size.height/2.0)];
+	[self.view.window addSubview:spinner];
 	[spinner startAnimating];
 	
 	items = items ? items : [[NSMutableArray alloc] init];

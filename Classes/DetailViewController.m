@@ -15,7 +15,8 @@
 #pragma mark IBAction
 
 - (IBAction) showInSafari:(id) sender{
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString: [self.currentItem valueForKey:@"deep_link"]]];
+	NSString* url = [NSString stringWithFormat:@"http://www.dzone.com/links/%@.html", [self.currentItem valueForKey:@"id"]];
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString: url]];
 }
 
 - (IBAction) showInBrowser:(id) sender{
